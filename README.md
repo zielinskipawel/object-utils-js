@@ -2,6 +2,7 @@
 
 > A collection of utilities dealing with object.
 
+ES5, tested package
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
@@ -40,7 +41,26 @@ isObject(()=>{})
 isObject(Object.create(null))
 isObject(global.document)
 ```
+### isObjectOrNull
+similar to isObject func except null value
 
+**true** for input parameter.
+```js
+isObjectOrNull(null)
+```
+### toObject
+convert any input to object
+```js
+toObject(null)
+//=> {}
+toObject({})
+//=> {}
+toObject({a:"a"})
+//=> {a:"a"}
+toObject(["a"])
+//=> {}
+
+```
 ### Author
 
 **Pawel Zielinski**
