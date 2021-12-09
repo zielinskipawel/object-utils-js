@@ -25,6 +25,20 @@ export class objectHelper implements IObjectHelper {
             return input
         } else return {}
     }
+    //Returns true if it is a DOM node
+    public isDOMNode(o: any) {
+        if(!o) return false
+        return !this.isObject(o) && typeof Node === "object"
+            ? o instanceof Node
+            : true && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string"
+    }
+
+    //Returns true if it is a DOM element
+    public isDOMElement(o: any) {
+        return this.isDOMNode(o) && typeof HTMLElement === "object"
+            ? o instanceof HTMLElement //DOM2
+            : true && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string"
+    }
 }
 
 export default new objectHelper()

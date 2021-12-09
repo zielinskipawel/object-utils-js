@@ -9,6 +9,8 @@ export declare class objectHelper implements IObjectHelper {
     isObject: (input: any) => boolean;
     isObjectOrNull: (input: any) => boolean;
     toObject: (input: any) => any;
+    isDOMNode(o: any): boolean;
+    isDOMElement(o: any): boolean;
 }
 declare const _default: objectHelper;
 export default _default;

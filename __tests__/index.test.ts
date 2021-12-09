@@ -1,4 +1,4 @@
-import i,{isObject, isObjectOrNull, toObject} from "../src/index"
+import i,{isObject, isObjectOrNull, toObject, isDOMNode,isDOMElement} from "../src/index"
 
 test("index.objectHelper should contains functions", () => {
     expect(i.toObject).toBeInstanceOf(Function)
@@ -9,4 +9,10 @@ test("index.objectHelper should contains functions", () => {
     
     expect(i.isObject).toBeInstanceOf(Function)
     expect(isObject).toBeInstanceOf(Function)
+    
+    expect(i.isDOMNode).toBeInstanceOf(Function)
+    expect(isDOMNode).toBeInstanceOf(Function)
+    
+    expect(i.isDOMElement).toBeInstanceOf(Function)
+    expect(isDOMElement).toBeInstanceOf(Function)
 })

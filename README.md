@@ -61,6 +61,37 @@ toObject(["a"])
 //=> {}
 
 ```
+
+### isDOMNode
+Returns true if it is a DOM Node
+**true** 
+```js
+isDOMElement(document.createElement("p"))
+isDOMNode(document)
+```
+**false** 
+```js
+isDOMElement(null)
+isDOMElement({})
+isDOMElement("")
+isDOMElement(1)
+```
+
+### isDOMElement
+Returns true if it is a DOM element
+**true** 
+```js
+isDOMElement(document.createElement("p"))
+```
+**false** 
+```js
+isDOMElement(null)
+isDOMElement({})
+isDOMElement("")
+isDOMElement(1)
+isDOMElement(document)
+```
+
 ### Author
 
 **Pawel Zielinski**

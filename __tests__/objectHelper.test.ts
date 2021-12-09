@@ -1,3 +1,4 @@
+
 import objHelper from "../src/objectHelper"
 
 test.each([
@@ -115,4 +116,46 @@ test.each([
     ],
 ])("%# for data %p toObject should return %p", (data, expected) => {
     expect(objHelper.toObject(data)).toStrictEqual(expected)
+})
+
+test.each([
+    [{}, false],
+    [null, false],
+    [undefined, false],
+    ["", false],
+    ["asd", false],
+    [1, false],
+    [true, false],
+    [[], false],
+    [[1], false],
+    [document.createElement("p"), true],
+    [document.createElement("div"), true],
+    [document.createElement("script"), true],
+    [document.createElement("style"), true],
+    [document.createElement("HTML"), true],
+    [document.createElement("iframe"), true],
+    [document, true],
+])("%# for data %p isDOMNode should return %p", (data, expected) => {
+    expect(objHelper.isDOMNode(data)).toStrictEqual(expected)
+})
+
+test.each([
+    [{}, false],
+    [null, false],
+    [undefined, false],
+    ["", false],
+    ["asd", false],
+    [1, false],
+    [true, false],
+    [[], false],
+    [[1], false],
+    [document.createElement("p"), true],
+    [document.createElement("div"), true],
+    [document.createElement("script"), true],
+    [document.createElement("style"), true],
+    [document.createElement("HTML"), true],
+    [document.createElement("iframe"), true],
+    [document, false],
+])("%# for data %p isDOMElement should return %p", (data, expected) => {
+    expect(objHelper.isDOMElement(data)).toStrictEqual(expected)
 })
