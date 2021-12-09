@@ -66,15 +66,15 @@ toObject(["a"])
 Returns true if it is a DOM Node
 **true** 
 ```js
-isDOMElement(document.createElement("p"))
+isDOMNode(document.createElement("p"))
 isDOMNode(document)
 ```
 **false** 
 ```js
-isDOMElement(null)
-isDOMElement({})
-isDOMElement("")
-isDOMElement(1)
+isDOMNode(null)
+isDOMNode({})
+isDOMNode("")
+isDOMNode(1)
 ```
 
 ### isDOMElement
